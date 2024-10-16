@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Luís Eduardo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para Font Awesome -->
+    <style>
+        body {
+            background-color: #121212;
+            color: #d1d1d1;
+            background-image: url('images/fundo2.gif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: "JetBrains Mono";
+        }
+
+        .hero-section {
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 50px 0;
+            text-align: center;
+        }
+        .puc-logo {
+            position: absolute;
+            bottom: 10px;
+            left: 74%;
+            width: 80px;
+            opacity: 0.7;
+        }
+
+        .navbar-dark .navbar-brand, .navbar-dark .nav-link {
+            color: #f0f0f0;
+        }
+
+        .navbar-dark .navbar-brand:hover, .navbar-dark .nav-link:hover {
+            color: #2790b0;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card {
+            background-color: #1e1e1e;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card .icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card:hover .icon {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .card-title, .card-text {
+            color: #f5f5f5;
+        }
+
+        .card a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+
+        a {
+            color: #ffca28;
+        }
+
+        a:hover {
+            color: #f0f0f0;
+        }
+
+        #sobre {
+            background-color: #181818;
+        }
+
+        #sobre .foto {
+            max-width: 300px;
+            border-radius: 30%;
+            margin-top: 20px;
+            filter: grayscale(50%);
+        }
+
+        #sobre .texto {
+            text-align: center;
+        }
+
+        .foto-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .foto {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .foto-container:hover .foto {
+            transform: scale(1.05);
+        }
+
+        .foto-container::after {
+            content: "\f121";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: rgba(255, 255, 255, 0);
+            transition: color 0.3s ease;
+        }
+
+        .foto-container:hover::after {
+            color: rgba(255, 255, 255, 1);
+        }
+
+
+        .foto-container a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            text-decoration: none;
+        }
+
+        .project-card {
+            position: relative;
+        }
+
+        .github-icon {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0);
+            transition: color 0.3s ease;
+        }
+
+        .project-card:hover .github-icon {
+            color: #ffffff;
+        }
+
+        .navbar {
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .navbar:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .navbar-brand:hover {
+            color: #6cb6a5;
+            transform: scale(1.1);
+            text-shadow: 0 0 5px rgba(108, 182, 165, 0.5);
+        }
+        .dev-icon {
+            margin-left: 8px;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: scale(0.5);
+        }
+        .navbar-brand:hover .dev-icon {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .nav-link {
+            color: white !important;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .nav-link:hover {
+            color: #6cb6a5 !important;
+            border-bottom: 2px solid #6cb6a5;
+        }
+        .nav-link img {
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+        }
+
+        .cruz-link {
+            border-bottom: none !important;
+            padding: 0 !important;
+        }
+
+        .cruz-link img {
+            width: 40px;
+            height: 40px;
+            margin-left: 15px;
+        }
+
+        .modal-content {
+            background-color: #343a40;
+            color: #f0f0f0;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #495057;
+        }
+
+        @media (min-width: 768px) {
+            #sobre .texto {
+                text-align: left;
+            }
+            .puc-logo {
+                left: 90%;
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            Luís Eduardo
+            <i class="fas fa-code dev-icon"></i>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link px-2" href="#sobre">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-2" href="#projetos">Projetos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-2" href="#contato">Contato</a>
+                </li>
+            </ul>
+            <a href="#link-para-cruz" class="nav-link cruz-link" id="cruz">
+                <img src="images/cruz.png" alt="Cruz" style="width: 40px; height: 40px; margin-left: 15px;">
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="versiculoModal" tabindex="-1" aria-labelledby="versiculoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="versiculoModalLabel">Versículo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Filipenses 4:8 - "Finalmente, irmãos, tudo o que é verdadeiro, tudo o que é honesto, tudo o que é justo, tudo o que é puro, tudo o que é amável, tudo o que é de boa fama; se há alguma virtude, e se há algum louvor, nisso pensai."
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<section class="hero-section px-2">
+    <h1>Bem-vindo ao meu portfólio!</h1>
+    <p>Explore meus projetos e experiências.</p>
+    <p class="lead"> Desenvolvedor FrontEnd | Engenharia de Software</p>
+    <a href="#projetos" class="btn btn-light btn-lg mt-3">Ver Projetos</a>
+    <img src="https://painel.e-sporti.com.br//UserImages/ligas/puc-minas/1.png" alt="PUC Minas Logo" class="puc-logo">
+</section>
+
+
+<section id="sobre" class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 texto">
+                <h2 class="text-center mb-4">Sobre Mim</h2>
+                <p>Sou Luís Eduardo, um desenvolvedor dedicado a criar soluções eficientes, sempre buscando excelência para honrar e glorificar a Deus. Com experiência em HTML, CSS, JavaScript, C e diversas outras tecnologias, estou constantemente aprimorando minhas habilidades e enfrentando novos desafios, com fé e determinação.</p>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="foto-container">
+                    <img src="images/eu%20Little.jpeg" alt="Foto minha" class="foto">
+                    <a href="https://github.com/leduardomdias" target="_blank"></a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-4" style="background-color: transparent;">
+    <div class="container">
+        <h2 class="text-center mb-4">Minhas Habilidades</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Linguagens que Conheço</h3>
+                        <div class="d-flex justify-content-around align-items-center">
+                            <div class="text-center my-2">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" style="width: 50px;">
+                                <p>HTML5</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" style="width: 50px;">
+                                <p>CSS3</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" style="width: 50px;">
+                                <p>C</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Linguagens que Estou Aprendendo</h3>
+                        <div class="d-flex justify-content-around align-items-center">
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width: 50px;">
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Ferramentas que Sei Usar</h3>
+                        <div class="d-flex justify-content-around align-items-center">
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" style="width: 50px;">
+                                <p>VSCode</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" style="width: 50px;">
+                                <p>Bootstrap</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="DevC++" style="width: 50px;">
+                                <p>DevC++</p>
+                            </div>
+                            <div class="text-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg" alt="CLion" style="width: 50px;">
+                                <p>CLion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="projetos" class="py-3">
+    <div class="container">
+        <h2 class="text-center mb-4">Projetos Recentes</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body project-card">
+                        <h3 class="card-title">FindPet</h3>
+                        <p class="card-text">Sistema web para ajudar a encontrar animais desaparecidos.</p>
+                        <a href="https://github.com/leduardomdias/pagina-inicial-tiaw.git" target="_blank" class="github-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body project-card">
+                        <h3 class="card-title">Portal de Séries</h3>
+                        <p class="card-text">Projeto de portal dedicado à organização e recomendação de séries de TV.</p>
+                        <a href="https://github.com/leduardomdias/portal-de-series.git" target="_blank" class="github-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="estagio" class="py-5" style="background-color: transparent;">
+    <div class="card py-4 mx-5 my-3">
+        <div class="container">
+            <h2 class="text-center mb-4">À Procura de Oportunidades</h2>
+            <p class="text-center">Estou em busca de um estágio ou emprego na área de desenvolvimento, onde eu possa adquirir experiência e entrar no mercado de trabalho. Estou ansioso para trabalhar em projetos que me permitam aplicar e expandir minhas habilidades em programação, enquanto contribuo para uma equipe dedicada à excelência.</p>
+            <p class="text-center">Se você tiver alguma oportunidade, entre em contato!</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+<footer id="contato" class="text-center py-3">
+    <div class="container">
+        <h2>Contato</h2>
+        <p><i class="fas fa-envelope"></i> Email: leduardomdias@gmail.com</p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/" class="text-white" target="_blank">LinkedIn</a></p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/leduardomdias" class="text-white" target="_blank">GitHub</a></p>
+    </div>
+    <div class="container">
+        <p class="mt-4 mb-0">&copy; 2024 Luís Eduardo - Todos os direitos reservados</p>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById("cruz").addEventListener("click", function(event) {
+        event.preventDefault();
+        var modal = new bootstrap.Modal(document.getElementById('versiculoModal'));
+        modal.show();
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

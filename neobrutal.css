@@ -257,6 +257,30 @@ section h2 {
   padding-bottom: 15px;
 }
 
+.brutal-swal {
+  background-color: var(--primary-color) !important;
+  border: 4px solid var(--dark-color) !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 var(--dark-color) !important;
+  font-family: "JetBrains Mono", monospace !important;
+}
+
+.brutal-swal-title {
+  color: var(--dark-color) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+}
+
+.swal2-icon {
+  border-radius: 0 !important;
+  border-width: 3px !important;
+}
+
+.swal2-html-container {
+  color: var(--dark-color) !important;
+  font-weight: 500 !important;
+}
+
 @media (max-width: 768px) {
   #projetos .col-md-6 {
     display: flex;

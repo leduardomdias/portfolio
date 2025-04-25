@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="neobrutal.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>
@@ -397,21 +401,68 @@
     </script>
 
     <script>
+        (function () {
+            emailjs.init("_KcX1PirycK-pFGv4");
+        })();
+
         document.getElementById('contact-form').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'ENVIANDO...';
+            submitBtn.disabled = true;
 
+            // Preparar o template de parâmetros
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
 
+            emailjs.send('service_oe5r5c9', 'template_xruqczh', templateParams)
+                .then(function (response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    submitBtn.innerHTML = 'ENVIADO COM SUCESSO!';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
 
-            window.location.href = `mailto:leduardomdias@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('Nome: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+                    document.getElementById('contact-form').reset();
 
-            this.reset();
+                    Swal.fire({
+                        title: 'Mensagem Enviada!',
+                        text: 'Sua mensagem foi enviada com sucesso! Obrigado pelo contato.',
+                        icon: 'success',
+                        confirmButtonText: 'Legal!',
+                        customClass: {
+                            popup: 'brutal-swal',
+                            title: 'brutal-swal-title',
+                            confirmButton: 'brutal-button'
+                        }
+                    });
+                }, function (error) {
+                    console.log('FAILED...', error);
+                    submitBtn.innerHTML = 'ERRO AO ENVIAR';
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                    }, 3000);
 
-            alert('Seu email está sendo preparado. Use seu cliente de email para enviá-lo.');
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente pelo email.',
+                        icon: 'error',
+                        confirmButtonText: 'Entendi',
+                        customClass: {
+                            popup: 'brutal-swal',
+                            title: 'brutal-swal-title',
+                            confirmButton: 'brutal-button'
+                        }
+                    });
+                });
         });
     </script>
 

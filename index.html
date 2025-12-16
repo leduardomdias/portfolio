@@ -999,21 +999,34 @@
 
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const form = this;
             const submitBtn = form.querySelector('button[type="submit"]');
-            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const title = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !email || !title || !message) {
+                Swal.fire({
+                    title: 'Campos obrigatórios!',
+                    text: 'Preencha todos os campos para enviar sua mensagem.',
+                    icon: 'warning',
+                    confirmButtonText: 'Ok',
+                    confirmButtonColor: '#ff0066',
+                    background: '#0d1117',
+                    color: '#e0e0e0'
+                });
+                return;
+            }
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
-
             const templateParams = {
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                name,
+                email,
+                title,
+                message
             };
 
-            emailjs.send('service_oe5r5c9', 'template_xruqczh', templateParams)
+            emailjs.send('service_r2q7k16', 'template_xruqczh', templateParams)
                 .then(function(response) {
                     submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;

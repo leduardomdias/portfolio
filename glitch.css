@@ -588,19 +588,27 @@ a:hover {
 }
 
 .stat-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number, .stat-suffix {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .stat-number {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--accent-cyan);
-    display: block;
+    margin-right: 0.15em;
 }
 
 .stat-suffix {
     font-size: 1.5rem;
     color: var(--accent-cyan);
+    margin-left: 0.05em;
 }
 
 .stat-label {

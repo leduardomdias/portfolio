@@ -4,416 +4,1008 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Luís Eduardo</title>
+    <title>Luís Eduardo | Desenvolvedor de Software</title>
+    <meta name="description" content="Portfólio de Luís Eduardo - Desenvolvedor de Software especializado em Web Development">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="neobrutal.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="glitch.css">
+    
+    <!-- External Libraries -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 <body>
-
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#">
-                Luís Eduardo
-                <i class="fas fa-code dev-icon"></i>
+                <span class="terminal-prompt">&gt;</span> luiseduardo
+                <span class="cursor-blink">_</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="#sobre">Sobre</a>
+                        <a class="nav-link" href="#sobre">
+                            <span class="nav-number">01.</span> Sobre
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="#projetos">Projetos</a>
+                        <a class="nav-link" href="#skills">
+                            <span class="nav-number">02.</span> Skills
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link px-2" href="#contato">Contato</a>
+                        <a class="nav-link" href="#projetos">
+                            <span class="nav-number">03.</span> Projetos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiencia">
+                            <span class="nav-number">04.</span> Experiência
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">
+                            <span class="nav-number">05.</span> Contato
+                        </a>
                     </li>
                 </ul>
-                <a href="#link-para-cruz" class="nav-link cruz-link" id="cruz">
-                    <img src="images/cruz.png" alt="Cruz" style="width: 40px; height: 40px; margin-left: 15px;">
+                <a href="#" class="nav-link cruz-link" id="cruz" title="Versículo do dia">
+                    <i class="fas fa-cross"></i>
                 </a>
             </div>
         </div>
     </nav>
 
-    <div class="modal fade" id="versiculoModal" tabindex="-1" aria-labelledby="versiculoModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg-animation"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8">
+                    <p class="hero-greeting" data-aos="fade-up" data-aos-delay="100">
+                        <span class="greeting-text">Olá, meu nome é</span>
+                    </p>
+                    <h1 class="hero-name glitch-text" data-text="Luís Eduardo" data-aos="fade-up" data-aos-delay="200">
+                        Luís Eduardo
+                    </h1>
+                    <h2 class="hero-title" data-aos="fade-up" data-aos-delay="300">
+                        <span class="typing-text"></span>
+                        <span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
+                        Estudante de <span class="highlight">Engenharia de Software</span> na PUC Minas e 
+                        Desenvolvedor na <span class="highlight">dtiDigital</span>. 
+                        Atuando com suporte <span class="highlight">NetSuite (Oracle)</span> usando TypeScript e JavaScript.
+                    </p>
+                    <div class="hero-cta" data-aos="fade-up" data-aos-delay="500">
+                        <a href="#projetos" class="btn-primary-custom">
+                            <i class="fas fa-rocket me-2"></i>Ver Projetos
+                        </a>
+                        <a href="#contato" class="btn-secondary-custom">
+                            <i class="fas fa-envelope me-2"></i>Contato
+                        </a>
+                    </div>
+                    <div class="hero-social" data-aos="fade-up" data-aos-delay="600">
+                        <a href="https://github.com/leduardomdias" target="_blank" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/" target="_blank" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:leduardomdias@gmail.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-none d-lg-block" data-aos="fade-left" data-aos-delay="400">
+                    <div class="hero-image-container">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="file-name">developer.js</span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">const</span> <span class="variable">developer</span> = {
+    <span class="property">name</span>: <span class="string">"Luís Eduardo"</span>,
+    <span class="property">role</span>: <span class="string">"Software Dev"</span>,
+    <span class="property">skills</span>: [
+        <span class="string">"JavaScript"</span>,
+        <span class="string">"TypeScript"</span>,
+        <span class="string">"Java"</span>
+    ],
+    <span class="property">passion</span>: <span class="string">"∞"</span>
+};
+
+<span class="variable">developer</span>.<span class="method">code</span>();</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="sobre" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-number">01.</span> Sobre Mim
+            </h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-frame">
+                            <img src="images/eu%20Little.jpeg" alt="Luís Eduardo" class="about-image">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="about-content">
+                        <p>
+                            Sou um desenvolvedor em formação, cursando <span class="highlight">Engenharia de Software</span> 
+                            na PUC Minas. Minha jornada na programação começou com a curiosidade de entender 
+                            como as coisas funcionam por trás das telas.
+                        </p>
+                        <p>
+                            Atualmente, estou focado em aprimorar minhas habilidades em <span class="highlight">desenvolvimento web</span> 
+                            e explorar tecnologias modernas como React e Spring Boot. Acredito que a tecnologia 
+                            tem o poder de transformar vidas e estou comprometido em contribuir para isso.
+                        </p>
+                        <p>
+                            Meu propósito é utilizar a tecnologia para criar soluções impactantes, sempre com 
+                            fé e dedicação, <span class="highlight">honrando e glorificando a Deus</span> em tudo o que faço.
+                        </p>
+                        
+                        <div class="about-stats">
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                                <span class="stat-number" data-count="4">0</span>
+                                <span class="stat-label">Projetos</span>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                                <span class="stat-number" data-count="5">0</span>
+                                <span class="stat-label">Tecnologias</span>
+                            </div>
+                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                                <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+                                <span class="stat-label">Dedicação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="section-padding section-dark">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-number">02.</span> Habilidades
+            </h2>
+            
+            <div class="skills-tabs" data-aos="fade-up">
+                <button class="skill-tab active" data-tab="languages">
+                    <i class="fas fa-code"></i> Linguagens
+                </button>
+                <button class="skill-tab" data-tab="frameworks">
+                    <i class="fas fa-layer-group"></i> Frameworks
+                </button>
+                <button class="skill-tab" data-tab="tools">
+                    <i class="fas fa-tools"></i> Ferramentas
+                </button>
+            </div>
+            
+            <div class="skills-content">
+                <!-- Languages Tab -->
+                <div class="skill-panel active" id="languages">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            </div>
+                            <h4>HTML5</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            </div>
+                            <h4>CSS3</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            </div>
+                            <h4>JavaScript</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">
+                            </div>
+                            <h4>TypeScript</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            </div>
+                            <h4>Java</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                            </div>
+                            <h4>C</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                            </div>
+                            <h4>C++</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+                            </div>
+                            <h4>MySQL</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="MariaDB">
+                            </div>
+                            <h4>MariaDB</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="55"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Frameworks Tab -->
+                <div class="skill-panel" id="frameworks">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            </div>
+                            <h4>ReactJS</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
+                            </div>
+                            <h4>Spring Boot</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                            </div>
+                            <h4>Bootstrap</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-icon">
+                                <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind">
+                            </div>
+                            <h4>Tailwind CSS</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools Tab -->
+                <div class="skill-panel" id="tools">
+                    <div class="skills-grid">
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode">
+                            </div>
+                            <h4>VS Code</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="95"></div>
+                            </div>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="150">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            </div>
+                            <h4>Git</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" alt="IntelliJ">
+                            </div>
+                            <h4>IntelliJ IDEA</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="250">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg" alt="CLion">
+                            </div>
+                            <h4>CLion</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="DevC++">
+                            </div>
+                            <h4>DevC++</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="350">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+                            </div>
+                            <h4>Bootstrap</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                            <span class="skill-level">Avançado</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                            <div class="skill-icon">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma">
+                            </div>
+                            <h4>Figma</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="65"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                        
+                        <div class="skill-card" data-aos="fade-up" data-aos-delay="450">
+                            <div class="skill-icon">
+                                <img src="https://www.heidisql.com/favicon.ico" alt="HeidiSQL">
+                            </div>
+                            <h4>HeidiSQL</h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="60"></div>
+                            </div>
+                            <span class="skill-level">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projetos" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-number">03.</span> Projetos
+            </h2>
+            
+            <p class="section-subtitle" data-aos="fade-up">
+                Alguns projetos que desenvolvi durante minha jornada de aprendizado
+            </p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-folder-open project-folder"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/leduardomdias/fortune-cookie-react" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Fortune Cookie</h3>
+                        <p class="project-description">
+                            Aplicativo interativo em React onde o usuário pode abrir um biscoito da sorte 
+                            virtual e receber uma mensagem aleatória inspiradora.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>JavaScript</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay"></div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-folder-open project-folder"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/leduardomdias/stopwatch-react" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">StopWatch</h3>
+                        <p class="project-description">
+                            Cronômetro desenvolvido em React com design minimalista. Permite iniciar, 
+                            pausar e resetar a contagem com interface intuitiva.
+                        </p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Hooks</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay"></div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-folder-open project-folder"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/leduardomdias/Semana-11-Diw" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">To-Do List</h3>
+                        <p class="project-description">
+                            Aplicativo completo de gerenciamento de tarefas com persistência em LocalStorage. 
+                            Permite adicionar, editar, excluir e marcar tarefas como concluídas.
+                        </p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay"></div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fas fa-folder-open project-folder"></i>
+                            <div class="project-links">
+                                <a href="https://github.com/leduardomdias/currencyConverter" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <h3 class="project-title">Currency Converter</h3>
+                        <p class="project-description">
+                            Conversor de moedas com interface limpa e funcional. Suporta múltiplas 
+                            moedas com taxas de câmbio atualizáveis.
+                        </p>
+                        <div class="project-tech">
+                            <span>JavaScript</span>
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                    <div class="project-overlay"></div>
+                </div>
+            </div>
+            
+            <div class="projects-cta" data-aos="fade-up">
+                <a href="https://github.com/leduardomdias" target="_blank" class="btn-outline">
+                    <i class="fab fa-github me-2"></i>Ver mais no GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE TIMELINE SECTION ========== -->
+    <section id="experiencia" class="section-padding section-highlight">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-number">04.</span> Experiência
+            </h2>
+            
+            <div class="timeline">
+                <!-- Experiência dti digital -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker current">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Desenvolvedor - Suporte NetSuite</h3>
+                            <span class="timeline-company">dti digital</span>
+                        </div>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Setembro 2025 - Presente
+                            <span class="timeline-badge current">Atual</span>
+                        </div>
+                        <p class="timeline-description">
+                            Atuando na equipe de suporte da plataforma NetSuite da Oracle, desenvolvendo 
+                            soluções e prestando suporte técnico. Trabalhando com customizações e integrações 
+                            utilizando TypeScript e JavaScript.
+                        </p>
+                        <div class="timeline-tech">
+                            <span>TypeScript</span>
+                            <span>JavaScript</span>
+                            <span>NetSuite</span>
+                            <span>Oracle</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formação PUC Minas -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker education">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Engenharia de Software</h3>
+                            <span class="timeline-company">PUC Minas</span>
+                        </div>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            2º Semestre 2024 - Presente
+                            <span class="timeline-badge education">Em andamento</span>
+                        </div>
+                        <p class="timeline-description">
+                            Graduação em Engenharia de Software, desenvolvendo habilidades em programação, 
+                            arquitetura de software, banco de dados, metodologias ágeis e boas práticas 
+                            de desenvolvimento.
+                        </p>
+                        <div class="timeline-tech">
+                            <span>Algoritmos</span>
+                            <span>Estrutura de Dados</span>
+                            <span>POO</span>
+                            <span>Banco de Dados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contato" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">
+                <span class="title-number">04.</span> Contato
+            </h2>
+            
+            <p class="section-subtitle" data-aos="fade-up">
+                Tem um projeto em mente ou quer trocar uma ideia? Ficarei feliz em conversar!
+            </p>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">
+                                    <i class="fas fa-user"></i> Nome
+                                </label>
+                                <input type="text" class="form-control" id="name" placeholder="Seu nome" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i> Email
+                                </label>
+                                <input type="email" class="form-control" id="email" placeholder="seu@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">
+                                    <i class="fas fa-tag"></i> Assunto
+                                </label>
+                                <input type="text" class="form-control" id="subject" placeholder="Assunto da mensagem" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">
+                                    <i class="fas fa-comment-alt"></i> Mensagem
+                                </label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Sua mensagem..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">
+                                <span class="btn-text">
+                                    <i class="fas fa-paper-plane me-2"></i>Enviar Mensagem
+                                </span>
+                                <span class="btn-loading">
+                                    <i class="fas fa-spinner fa-spin me-2"></i>Enviando...
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="contact-info-wrapper">
+                        <h4>Outras formas de contato</h4>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:leduardomdias@gmail.com">leduardomdias@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/" target="_blank">
+                                    /in/luís-eduardo
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/leduardomdias" target="_blank">
+                                    /leduardomdias
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Localização</span>
+                                <span>Minas Gerais, Brasil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://github.com/leduardomdias" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:leduardomdias@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-text">
+                    Desenvolvido com <i class="fas fa-heart"></i> por <span class="highlight">Luís Eduardo</span>
+                </p>
+                <p class="footer-copyright">
+                    &copy; 2025 - Todos os direitos reservados
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== MODAL VERSÍCULO ========== -->
+    <div class="modal fade" id="versiculoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="versiculoModalLabel">Versículo</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title">
+                        <i class="fas fa-cross me-2"></i>Versículo do Dia
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    Filipenses 4:8 - "Finalmente, irmãos, tudo o que é verdadeiro, tudo o que é honesto, tudo o que é
-                    justo, tudo o que é puro, tudo o que é amável, tudo o que é de boa fama; se há alguma virtude, e se
-                    há algum louvor, nisso pensai."
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <blockquote>
+                        "Finalmente, irmãos, tudo o que é verdadeiro, tudo o que é honesto, tudo o que é
+                        justo, tudo o que é puro, tudo o que é amável, tudo o que é de boa fama; se há 
+                        alguma virtude, e se há algum louvor, nisso pensai."
+                    </blockquote>
+                    <cite>— Filipenses 4:8</cite>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ========== BACK TO TOP ========== -->
+    <button id="backToTop" class="back-to-top" title="Voltar ao topo">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-
-    <section class="hero-section px-2">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h1 class="display-3 fw-bold">LUÍS EDUARDO</h1>
-                    <p class="hero-subtitle">DESENVOLVEDOR DE SOFTWARE</p>
-                    <div class="hero-tags mt-4">
-                        <span class="tag">HTML</span>
-                        <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">C/C++</span>
-                    </div>
-                    <a href="#projetos" class="btn btn-hero mt-4">VER PROJETOS</a>
-                </div>
-
-                <div class="logo-container">
-                    <img src="https://painel.e-sporti.com.br//UserImages/ligas/puc-minas/1.png" alt="PUC Minas Logo"
-                        class="puc-logo">
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="sobre" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-black">SOBRE MIM</h2>
-            <div class="row align-items-center">
-                <div class="col-md-5">
-                    <div class="foto-container brutal-border">
-                        <img src="images/eu%20Little.jpeg" alt="Foto minha" class="foto">
-                    </div>
-                    <div class="social-links mt-3 text-center">
-                        <a href="https://github.com/leduardomdias" target="_blank" class="brutal-button"><i
-                                class="fab fa-github"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/" target="_blank"
-                            class="brutal-button"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    </div>
-                </div>
-                <div class="col-md-7 brutal-text-box">
-                    <p class="sobre-text">Sou Luís Eduardo, um desenvolvedor apaixonado por tecnologia e inovação.
-                        Atualmente, curso Engenharia de Software. Com experiência em HTML, CSS, JavaScript, C e ReactJS,
-                        estou sempre buscando aprimorar minhas habilidades e enfrentar novos desafios. Meu propósito é
-                        utilizar a tecnologia para criar soluções impactantes, sempre com fé e dedicação, honrando e
-                        glorificando a Deus em tudo o que faço.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="py-4" style="background-color: transparent;">
-        <div class="container">
-            <h2 class="text-center mb-4">Minhas Habilidades</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
-                        <div class="card-body">
-                            <h3 class="card-title text-center">Tecnologias que Conheço</h3>
-                            <div class="d-flex flex-wrap justify-content-around align-items-center">
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                        alt="HTML5" style="width: 50px;">
-                                    <p>HTML5</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
-                                        alt="CSS3" style="width: 50px;">
-                                    <p>CSS3</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                                        alt="JavaScript" style="width: 50px;">
-                                    <p>JavaScript</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
-                                        alt="C" style="width: 50px;">
-                                    <p>C</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-                                        alt="C++" style="width: 50px;">
-                                    <p>C++</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
-                        <div class="card-body">
-                            <h3 class="card-title text-center">Linguagens/Tecnologias que Estou Aprendendo</h3>
-                            <div class="d-flex justify-content-around align-items-center flex-wrap gap-3">
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
-                                        alt="React" style="width: 50px;">
-                                    <p>ReactJS</p>
-                                </div>
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-                                        alt="Java" style="width: 50px;">
-                                    <p>Java</p>
-                                </div>
-                                <div class="text-center">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-                                        alt="Spring Boot" style="width: 50px;">
-                                    <p>Spring Boot</p>
-                                </div>
-                                <div class="text-center">
-                                    <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-                                        alt="Tailwind CSS" style="width: 50px;">
-                                    <p>Tailwind CSS</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-6 mb-4">
-                    <div class="card h-100" style="background-color: rgba(30, 30, 30, 0.9); border: none;">
-                        <div class="card-body">
-                            <h3 class="card-title text-center">Ferramentas que Sei Usar</h3>
-                            <div class="d-flex flex-wrap justify-content-around align-items-center">
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
-                                        alt="VSCode" style="width: 50px;">
-                                    <p>VSCode</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
-                                        alt="Bootstrap" style="width: 50px;">
-                                    <p>Bootstrap</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
-                                        alt="Git" style="width: 50px;">
-                                    <p>Git</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg"
-                                        alt="DevC++" style="width: 50px;">
-                                    <p>DevC++</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clion/clion-original.svg"
-                                        alt="CLion" style="width: 50px;">
-                                    <p>CLion</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg"
-                                        alt="IntelliJ" style="width: 50px;">
-                                    <p>IntelliJ</p>
-                                </div>
-                                <div class="text-center m-2">
-                                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                        alt="Figma" style="width: 50px;">
-                                    <p>Figma</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section id="projetos" class="py-3">
-        <div class="container">
-            <h2 class="text-center mb-4">Projetos Recentes</h2>
-            <div class="row">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body project-card">
-                                <h3 class="card-title">Fortune Cookie</h3>
-                                <p class="card-text">Um simples projeto em React onde o usuário pode abrir um biscoito
-                                    da sorte e receber uma mensagem aleatória.</p><br>
-                                <a href="https://github.com/leduardomdias/fortune-cookie-react" target="_blank"
-                                    class="github-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body project-card">
-                                <h3 class="card-title">StopWatch</h3>
-                                <p class="card-text">Este é um aplicativo de cronômetro desenvolvido em React. Ele
-                                    permite iniciar, pausar e resetar a contagem do tempo com um design simples e
-                                    intuitivo.</p>
-                                <a href="https://github.com/leduardomdias/stopwatch-react" target="_blank"
-                                    class="github-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body project-card">
-                                <h3 class="card-title">To-Do List Application</h3>
-                                <p class="card-text">Um aplicativo de lista de tarefas elegante e intuitivo,
-                                    desenvolvido com JavaScript, HTML e CSS. Ele permite que os usuários adicionem,
-                                    editem, excluam e marquem tarefas como concluídas. Os dados das tarefas são
-                                    armazenados no armazenamento local do navegador, garantindo que permaneçam salvos
-                                    mesmo após atualizar a página ou fechar o navegador.
-                                </p>
-                                <a href="https://github.com/leduardomdias/Semana-11-Diw" target="_blank"
-                                    class="github-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body project-card">
-                                <h3 class="card-title">Currency Converter</h3>
-                                <p class="card-text">Este é um aplicativo simples de Conversor de Moeda desenvolvido
-                                    usando HTML, CSS e JavaScript. Ele permite que os usuários convertam valores de uma
-                                    moeda para outra com base em taxas de câmbio fixas.</p><br><br>
-                                <a href="https://github.com/leduardomdias/currencyConverter" target="_blank"
-                                    class="github-icon">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="estagio" class="py-5" style="background-color: transparent;">
-        <div class="card py-4 mx-5 my-1">
-            <div class="container">
-                <h2 class="text-center mb-4">À Procura de Oportunidades</h2>
-                <p class="text-center">Estou em busca de uma oportunidade de estágio ou emprego na área de
-                    desenvolvimento, onde possa aplicar e aprimorar minhas habilidades em tecnologias. Tenho grande
-                    interesse em atuar em projetos inovadores que promovam aprendizado contínuo e crescimento
-                    profissional, contribuindo de forma estratégica para o desenvolvimento de soluções eficientes.
-                    Comprometido com a excelência e a evolução na área de tecnologia, busco integrar uma equipe dinâmica
-                    e colaborativa, sempre com dedicação e propósito.</p>
-                <p class="text-center">Se você tiver alguma oportunidade, entre em contato!</p>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <footer id="contato" class="py-5">
-        <div class="container">
-            <h2 class="section-title text-center">CONTATO</h2>
-
-            <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card brutal-card">
-                        <div class="card-body">
-                            <form id="contact-form">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label fw-bold">Nome</label>
-                                    <input type="text" class="form-control brutal-input" id="name" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="email" class="form-label fw-bold">Email</label>
-                                    <input type="email" class="form-control brutal-input" id="email" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="subject" class="form-label fw-bold">Assunto</label>
-                                    <input type="text" class="form-control brutal-input" id="subject" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="message" class="form-label fw-bold">Mensagem</label>
-                                    <textarea class="form-control brutal-input" id="message" rows="5"
-                                        required></textarea>
-                                </div>
-
-                                <button type="submit" class="btn brutal-button w-100">ENVIAR MENSAGEM</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card brutal-card h-100">
-                        <div class="card-body">
-                            <h3 class="card-title border-bottom pb-2">Outras formas de contato</h3>
-
-                            <div class="contact-info mt-4">
-                                <p><i class="fas fa-envelope me-2"></i> leduardomdias@gmail.com</p>
-                                <p><i class="fab fa-linkedin me-2"></i> <a
-                                        href="https://www.linkedin.com/in/luís-eduardo-marques-dias-53804a333/"
-                                        target="_blank">LinkedIn</a></p>
-                                <p><i class="fab fa-github me-2"></i> <a href="https://github.com/leduardomdias"
-                                        target="_blank">GitHub</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-5">
-                <p>&copy; 2025 Luís Eduardo - Todos os direitos reservados</p>
-            </div>
-        </div>
-    </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <!-- ========== SCRIPTS ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <script>
-        document.getElementById("cruz").addEventListener("click", function (event) {
-            event.preventDefault();
-            var modal = new bootstrap.Modal(document.getElementById('versiculoModal'));
-            modal.show();
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
         });
-    </script>
 
-    <script>
-        (function () {
+        // Typing Effect
+        const typingTexts = [
+            'Dev @ dtiDigital',
+            'Suporte NetSuite | Oracle',
+            'Estudante de Eng. de Software',
+            'Aprendiz Eterno'
+        ];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingElement = document.querySelector('.typing-text');
+
+        function typeEffect() {
+            const currentText = typingTexts[textIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % typingTexts.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        typeEffect();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Skills tabs
+        const skillTabs = document.querySelectorAll('.skill-tab');
+        const skillPanels = document.querySelectorAll('.skill-panel');
+
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                skillTabs.forEach(t => t.classList.remove('active'));
+                skillPanels.forEach(p => p.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+                
+                // Animate skill bars
+                animateSkillBars();
+            });
+        });
+
+        // Animate skill bars
+        function animateSkillBars() {
+            const activePanel = document.querySelector('.skill-panel.active');
+            const skillBars = activePanel.querySelectorAll('.skill-progress');
+            
+            skillBars.forEach(bar => {
+                const progress = bar.dataset.progress;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = progress + '%';
+                }, 100);
+            });
+        }
+
+        // Initial animation
+        setTimeout(animateSkillBars, 1000);
+
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+
+        // Intersection Observer for counters
+        const statsSection = document.querySelector('.about-stats');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Versículo Modal
+        document.getElementById('cruz').addEventListener('click', function(e) {
+            e.preventDefault();
+            new bootstrap.Modal(document.getElementById('versiculoModal')).show();
+        });
+
+        // EmailJS
+        (function() {
             emailjs.init("_KcX1PirycK-pFGv4");
         })();
 
-        document.getElementById('contact-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = 'ENVIANDO...';
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            
+            submitBtn.classList.add('loading');
             submitBtn.disabled = true;
 
-            // Preparar o template de parâmetros
             const templateParams = {
                 from_name: document.getElementById('name').value,
                 from_email: document.getElementById('email').value,
@@ -422,51 +1014,55 @@
             };
 
             emailjs.send('service_oe5r5c9', 'template_xruqczh', templateParams)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    submitBtn.innerHTML = 'ENVIADO COM SUCESSO!';
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }, 3000);
-
-                    document.getElementById('contact-form').reset();
+                .then(function(response) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                    form.reset();
 
                     Swal.fire({
                         title: 'Mensagem Enviada!',
-                        text: 'Sua mensagem foi enviada com sucesso! Obrigado pelo contato.',
+                        text: 'Obrigado pelo contato. Responderei em breve!',
                         icon: 'success',
-                        confirmButtonText: 'Legal!',
-                        customClass: {
-                            popup: 'brutal-swal',
-                            title: 'brutal-swal-title',
-                            confirmButton: 'brutal-button'
-                        }
+                        confirmButtonText: 'Ótimo!',
+                        confirmButtonColor: '#00d4ff',
+                        background: '#0d1117',
+                        color: '#e0e0e0'
                     });
-                }, function (error) {
-                    console.log('FAILED...', error);
-                    submitBtn.innerHTML = 'ERRO AO ENVIAR';
-                    setTimeout(() => {
-                        submitBtn.innerHTML = originalText;
-                        submitBtn.disabled = false;
-                    }, 3000);
+                }, function(error) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
 
                     Swal.fire({
                         title: 'Erro!',
-                        text: 'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente ou entre em contato diretamente pelo email.',
+                        text: 'Ocorreu um erro. Tente novamente ou entre em contato pelo email.',
                         icon: 'error',
                         confirmButtonText: 'Entendi',
-                        customClass: {
-                            popup: 'brutal-swal',
-                            title: 'brutal-swal-title',
-                            confirmButton: 'brutal-button'
-                        }
+                        confirmButtonColor: '#ff0066',
+                        background: '#0d1117',
+                        color: '#e0e0e0'
                     });
                 });
         });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 100;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLink?.classList.add('active');
+                } else {
+                    navLink?.classList.remove('active');
+                }
+            });
+        });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
